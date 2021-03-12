@@ -1,0 +1,13 @@
+
+.defaultMainView {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 52rem;
+  margin: auto;
+
+  section {
+    width: 92%;
+    margin: 29vh auto 0;
+  }
+}

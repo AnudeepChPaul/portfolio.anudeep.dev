@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Noto+Sans:wght@400;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,300&display=swap");
+
+$legacy-support-for-mozilla: true;
+$fa-font-path: "../../src/styles/fontawesome/webfonts";
+
+@import "src/styles/fontawesome/scss/fontawesome.scss";
+@import "src/styles/fontawesome/scss/brands.scss";
+@import "src/styles/fontawesome/scss/solid.scss";
+
+@import "src/styles/dark";
+@import "src/styles/light";
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  margin: 0px;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: visible;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

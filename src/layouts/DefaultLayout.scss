@@ -1,0 +1,11 @@
+.wrapper {
+  height: 100%;
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
+
+  hr {
+    border-color: var(--textColor);
+  }
+
+  font-family: 'Montserrat', 'Open Sans', 'Noto Sans', system-ui;
+}
