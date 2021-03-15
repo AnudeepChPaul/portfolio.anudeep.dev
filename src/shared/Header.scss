@@ -11,10 +11,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 70vw;
+    width: var(--visible-area);
     height: 7vh;
     overflow: hidden;
-    margin: 0 15vw;
+    margin: 0 auto;
     background-color: var(--backgroundColor);
     font-size: 1em;
 

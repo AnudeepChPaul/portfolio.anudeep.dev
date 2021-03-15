@@ -8,19 +8,19 @@
   background-color: var(--backgroundColor);
 
   .introSection {
-    width: 70vw;
+    width: var(--visible-area);
+    margin: 30vh auto 0;
+  }
+
+  .skillSection, .projects {
+    width: var(--visible-area);
     margin: 29vh auto 0;
+  }
 
-    &:first-child {
-      margin-top: 36vh;
-    }
-
-    &:last-child {
-      margin-bottom: 7vh;
-    }
+  .projects {
+    margin-bottom: 7vh;
   }
 }
-
 
 video {
   width: 100%;

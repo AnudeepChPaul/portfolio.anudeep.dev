@@ -1,17 +1,17 @@
 import * as React from 'react'
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import './index.scss'
 import DefaultLayout from '../layouts/DefaultLayout'
-import {AppContext} from '../Context'
+import { AppContext } from '../Context'
 import ResumeView from '../components/ResumeView'
-import {Helmet} from 'react-helmet'
-import {graphql} from 'gatsby'
+import { Helmet } from 'react-helmet'
+import { graphql } from 'gatsby'
 
 const links = [
   'Skills'
   , 'Career'
   , 'About'
-];
+]
 
 const top10Skills = [
   'JS'
@@ -24,7 +24,7 @@ const top10Skills = [
   , 'Cordova'
   , 'Docker'
   , 'Shell'
-];
+]
 
 const skillSet = [
   {
@@ -126,8 +126,7 @@ const skillSet = [
       }
     ]
   }
-];
-
+]
 
 const intro = {
   header: 'ANUDEEP CHANDRA PAUL'
@@ -135,8 +134,7 @@ const intro = {
   tagline: 'Full Stack Web Developer | AI-ML Engineer'
   ,
   description: 'I am a Full Stack Web Developer who\'s also proficient in <b>Artificial Intelligence & Machine Learning</b>.'
-};
-
+}
 
 const companies = [
   {
@@ -160,7 +158,7 @@ const companies = [
     , projects: [
       {
         name: 'BFF'
-        , technologies: ['Nodejs', 'Redis']
+        , technologies: [ 'Nodejs', 'Redis' ]
       }
     ]
   }
@@ -180,21 +178,21 @@ const companies = [
       }
     ]
   }
-];
+]
 
-const IndexPage = ({data}) => {
-  const [theme, setTheme] = useState('light');
+const IndexPage = ({ data }: { data: { site: { siteMetadata: { title: string } } } }) => {
+  const [ theme, setTheme ] = useState( 'light' )
 
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
-  };
+  const toggleTheme = (): void => {
+    setTheme( theme === 'dark' ? 'light' : 'dark' )
+  }
 
-  useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
-  }, []);
+  useEffect( () => {
+    window.scrollTo( { top: 0, left: 0, behavior: 'smooth' } )
+  }, [] )
 
   return (
-    <AppContext.Provider value={{links, top10Skills, theme, skillSet, toggleTheme, intro, data, companies}}>
+    <AppContext.Provider value={{ links, top10Skills, theme, skillSet, toggleTheme, intro, data, companies }}>
       <Helmet title={data.site.siteMetadata.title} defer={false}>
         <script type="application/ld+json">
           {`
@@ -218,7 +216,7 @@ const IndexPage = ({data}) => {
       </DefaultLayout>
     </AppContext.Provider>
   )
-};
+}
 
 export const query = graphql`
     query {
@@ -228,6 +226,6 @@ export const query = graphql`
             }
         }
     }
-`;
+`
 
 export default IndexPage

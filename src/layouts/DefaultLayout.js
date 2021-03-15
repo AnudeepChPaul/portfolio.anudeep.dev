@@ -1,14 +1,14 @@
 import * as React from 'react'
 import HeaderComp from '../shared/Header'
 import './DefaultLayout.scss'
-import {AppContext} from '../Context.js'
+import { AppContext } from '../Context.ts'
 
 
 const DefaultLayout = (props) => {
   return (
     <AppContext.Consumer>
-      {({theme}) => {
-        const classNames = `wrapper ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`;
+			{({ theme }) => {
+				const classNames = `wrapper ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`
         return (
           <div className={classNames}>
             <HeaderComp/>
@@ -21,6 +21,6 @@ const DefaultLayout = (props) => {
       }}
     </AppContext.Consumer>
   )
-};
+}
 
 export default DefaultLayout

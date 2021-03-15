@@ -13,6 +13,7 @@ $fa-font-path: "../../src/styles/fontawesome/webfonts";
 :root {
   font-size: 16px;
   scrollbar-width: none;
+  --visible-area: 52rem;
 
   &::-webkit-scrollbar {
     display: none;
