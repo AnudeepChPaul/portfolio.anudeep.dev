@@ -1,0 +1,73 @@
+
+.topSkills {
+  flex: 1 1;
+  min-height: 30vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: left;
+  margin: 0 0 4rem 0;
+
+  .skillQuickDisplay {
+    height: 7.5rem;
+    width: 7.5rem;
+    margin: 1rem 1.6rem 1rem 0;
+    line-height: 2.5;
+    user-select: none;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &:nth-child(5n) {
+      margin-right: 0px;
+    }
+  }
+
+  h3, p {
+    margin: 0;
+    max-height: 2.5rem;
+  }
+}
+
+.skillSection {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  text-align: center;
+}
+
+.allSkills {
+  flex: 1;
+  border-radius: 0.1rem;
+  display: flex;
+  //user-select: none;
+
+  table {
+    flex: 1;
+    text-align: left;
+    //border-spacing: 1rem;
+
+    th {
+      width: 33%;
+    }
+
+    tbody {
+      tr {
+        height: 2rem;
+      }
+
+      td {
+        i {
+          height: 1rem;
+          width: 1rem;
+        }
+
+        span {
+          padding: 0 0 0 1rem;
+        }
+      }
+    }
+  }
+}

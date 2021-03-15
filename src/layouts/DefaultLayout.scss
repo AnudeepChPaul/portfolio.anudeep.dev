@@ -1,0 +1,29 @@
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
+
+  hr {
+    border-color: var(--textColor);
+  }
+
+  font-family: 'Montserrat', 'Open Sans', 'Noto Sans', system-ui;
+
+
+  footer {
+    height: 7vh;
+    width: 100vw;
+    text-align: center;
+    line-height: 4;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    background-color: var(--backgroundColor);
+
+    .fab {
+      margin-left: 0.25rem;
+    }
+  }
+}

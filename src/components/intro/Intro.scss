@@ -1,0 +1,24 @@
+.introSection {
+  opacity: 1;
+
+  .introSectionInner {
+    display: flex;
+    width: 100%;
+  }
+
+  .picArticle {
+    width: 20rem;
+    height: 20rem;
+    background-color: var(--textColor);
+    border-radius: 0.1rem;
+  }
+
+  .bioArticle {
+    flex: 1;
+    margin: 0rem 1rem;
+
+    h3 {
+      font-size: 1.1rem;
+    }
+  }
+}

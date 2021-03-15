@@ -1,0 +1,25 @@
+.bottomBtn, .topBtn {
+    position: fixed;
+    left: calc(50% - 5rem);
+    width: 5rem;
+    height: 2rem;
+
+    background-color: transparent;
+    color: ghostwhite;
+    border: none;
+    font-size: 0.5rem;
+
+    opacity: 0.25;
+    scale: 1;
+    outline: none;
+    cursor: pointer;
+}
+
+.bottomBtn {
+    bottom: 2rem;
+}
+
+.topBtn {
+    top: 2rem;
+}
+
