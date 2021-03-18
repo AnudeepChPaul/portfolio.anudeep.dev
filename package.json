@@ -45,5 +45,11 @@
   "browserslist": [
     "last 2 versions",
     "not ie 10"
-  ]
+  ],
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  }
 }

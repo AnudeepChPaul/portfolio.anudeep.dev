@@ -1,17 +1,19 @@
 import * as React from 'react'
-import {forwardRef} from 'react'
+import { forwardRef } from 'react'
 import './Skills.scss'
-import {PercentageRing} from '../../shared/PercentageRing'
+import { PercentageRing } from '../../shared/PercentageRing'
 import * as PropTypes from 'prop-types'
 
 const Top10 = forwardRef((props, ref) => {
+  const fontSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('font-size'))
+
   return (
     <article className='topSkills'>
       {props.skills.map((skill, index) => {
-        const progress = (Math.floor(Math.random() * 30) + 60);
+        const progress = (Math.floor(Math.random() * 30) + 60)
         return (
           <div key={index} className='skillQuickDisplay'>
-            <PercentageRing progress={progress} radius={64} stroke={4}/>
+            <PercentageRing progress={progress} radius={fontSize * 5} stroke={5}/>
             <h3>{skill}</h3>
             <p>{progress + '%'}</p>
           </div>
@@ -19,11 +21,11 @@ const Top10 = forwardRef((props, ref) => {
       })}
     </article>
   )
-});
+})
 
 Top10.propTypes = {
   skills: PropTypes.array
-};
+}
 
 
 export default Top10

@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { useEffect, useState } from 'react'
-import './index.scss'
+import { useState } from 'react'
 import DefaultLayout from '../layouts/DefaultLayout'
 import { AppContext } from '../Context'
 import ResumeView from '../components/ResumeView'
 import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
+import './index.scss'
 
 const links = [
   'Skills'
@@ -21,7 +21,7 @@ const top10Skills = [
   , 'Nodejs'
   , 'Mongodb'
   , 'MySQL'
-  , 'Cordova'
+  , 'GraphQL'
   , 'Docker'
   , 'Shell'
 ]
@@ -68,6 +68,10 @@ const skillSet = [
     type: 'Frameworks/Libraries'
     , skills: [
       {
+        icon: 'fa fa-cog'
+        , text: 'GraphQL'
+      }
+      , {
         icon: 'fab fa-react'
         , text: 'React js'
       }
@@ -133,7 +137,7 @@ const intro = {
   ,
   tagline: 'Full Stack Web Developer | AI-ML Engineer'
   ,
-  description: 'I am a Full Stack Web Developer who\'s also proficient in <b>Artificial Intelligence & Machine Learning</b>.'
+  description: 'I am a <b>Full Stack Web Developer</b> who\'s also proficient in <b>Artificial Intelligence & Machine Learning</b>.'
 }
 
 const companies = [
@@ -187,9 +191,9 @@ const IndexPage = ({ data }: { data: { site: { siteMetadata: { title: string } }
     setTheme( theme === 'dark' ? 'light' : 'dark' )
   }
 
-  useEffect( () => {
-    window.scrollTo( { top: 0, left: 0, behavior: 'smooth' } )
-  }, [] )
+  // useEffect( () => {
+  //   window.scrollTo( { top: 0, left: 0, behavior: 'smooth' } )
+  // }, [] )
 
   return (
     <AppContext.Provider value={{ links, top10Skills, theme, skillSet, toggleTheme, intro, data, companies }}>
@@ -210,10 +214,12 @@ const IndexPage = ({ data }: { data: { site: { siteMetadata: { title: string } }
           `}
         </script>
       </Helmet>
-      <video className="backgroundMotion" src="me.mp4" controls={false} autoPlay={true}/>
-      <DefaultLayout>
-        <ResumeView/>
-      </DefaultLayout>
+      <React.StrictMode>
+        {/*<video className="backgroundMotion" src="me.mp4" controls={false} autoPlay={true}/>*/}
+        <DefaultLayout>
+          <ResumeView/>
+        </DefaultLayout>
+      </React.StrictMode>
     </AppContext.Provider>
   )
 }

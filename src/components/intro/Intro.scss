@@ -4,6 +4,11 @@
   .introSectionInner {
     display: flex;
     width: 100%;
+    opacity: 0;
+
+    &.hidden {
+      display: none;
+    }
   }
 
   .picArticle {
@@ -19,6 +24,72 @@
 
     h3 {
       font-size: 1.1rem;
+    }
+  }
+
+  .introCinematic {
+    //display: flex;
+    //justify-content: center;
+    padding-left: 4rem;
+
+    .name, .myself, .designation {
+      position: absolute;
+      opacity: 0;
+      margin: 0 0 0 16rem;
+      font-size: 5.5rem;
+      width: calc(var(--readable-content-width) - 16rem);
+      font-weight: lighter;
+    }
+
+    .myself {
+      font-size: 7rem;
+      width: 16rem;
+      margin: 0;
+      opacity: 1;
+    }
+
+    .name {
+      position: absolute;
+      opacity: 1;
+      //padding: 0 0 0 2.4rem;
+      word-break: break-word;
+
+      span {
+        opacity: 0;
+
+        &:nth-child(1), &:nth-child(8), &:nth-child(15) {
+          color: lightpink;
+        }
+      }
+    }
+
+    .designation {
+      position: absolute;
+      opacity: 1;
+      //padding: 0 0 0 2.5rem;
+      font-size: 5.5rem;
+
+      ul {
+        list-style: none;
+        margin: 0;
+
+        li {
+          position: absolute;
+          opacity: 0;
+        }
+
+        .second {
+          top: 7rem;
+        }
+      }
+
+      div {
+        line-height: 20rem;
+      }
+
+      .finalDesignation {
+        opacity: 0;
+      }
     }
   }
 }

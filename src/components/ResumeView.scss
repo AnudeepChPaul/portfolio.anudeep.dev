@@ -8,12 +8,12 @@
   background-color: var(--backgroundColor);
 
   .introSection {
-    width: var(--visible-area);
+    width: var(--readable-content-width);
     margin: 30vh auto 0;
   }
 
   .skillSection, .projects {
-    width: var(--visible-area);
+    width: var(--readable-content-width);
     margin: 29vh auto 0;
   }
 
