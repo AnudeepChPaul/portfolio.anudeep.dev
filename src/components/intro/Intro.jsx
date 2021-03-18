@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 import './Intro.scss'
 import PropTypes from 'prop-types'
 import anime from 'animejs'
-import { controller } from '../../Context'
 
 
 const Intro = React.forwardRef((props, ref) => {
@@ -14,6 +13,8 @@ const Intro = React.forwardRef((props, ref) => {
     if ( typeof window === 'undefined' ) {
       return
     }
+
+		const controller = new window.ScrollMagic.Controller()
 
     window.scrollTo({ top: 0, left: 0 })
 
@@ -44,34 +45,34 @@ const Intro = React.forwardRef((props, ref) => {
         , rotateX: [ '180deg', 0 ]
         , delay  : anime.stagger(100)
       }).add({
-      targets     : '.designation .second'
-      , opacity   : [ 0, 1 ]
-      , translateX: [ -250, 0 ]
-      , delay     : anime.stagger(100)
-      , easing    : 'easeOutElastic(1, .6)'
-    }).add({
-      targets     : '.designation .second, .designation .first'
-      , opacity   : [ 1, 0 ]
-      , translateX: [ 0, 250 ]
-      , easing    : 'easeOutElastic(1, .6)'
-    }).add({
-      targets  : '.designation .finalDesignation'
-      , opacity: [ 0, 1 ]
-      , rotateX: [ '45deg', 0 ]
-    }).add({
-      targets  : '.designation .finalDesignation, .myself'
-      , opacity: [ 1, 0 ]
-    }).add({
-      targets  : '.introSectionInner'
-      , opacity: [ 0, 1 ]
-      , scale  : [ 0, 1 ]
-    }).add({
-      targets   : '.introSectionInner'
-      , scale   : [ 1, 9 ]
-      , opacity : [ 1, 0 ]
-      , duration: 1200
-      , easing  : 'linear'
-    })
+			targets     : '.designation .second'
+			, opacity   : [ 0, 1 ]
+			, translateX: [ -250, 0 ]
+			, delay     : anime.stagger(100)
+			, easing    : 'easeOutElastic(1, .6)'
+		}).add({
+			targets     : '.designation .second, .designation .first'
+			, opacity   : [ 1, 0 ]
+			, translateX: [ 0, 250 ]
+			, easing    : 'easeOutElastic(1, .6)'
+		}).add({
+			targets  : '.designation .finalDesignation'
+			, opacity: [ 0, 1 ]
+			, rotateX: [ '45deg', 0 ]
+		}).add({
+			targets  : '.designation .finalDesignation, .myself'
+			, opacity: [ 1, 0 ]
+		}).add({
+			targets  : '.introSectionInner'
+			, opacity: [ 0, 1 ]
+			, scale  : [ 0, 1 ]
+		}).add({
+			targets   : '.introSectionInner'
+			, scale   : [ 1, 9 ]
+			, opacity : [ 1, 0 ]
+			, duration: 1200
+			, easing  : 'linear'
+		})
 
     const trigger = '.wrapper'
       , pin = document.querySelector('.introSection')

@@ -9,7 +9,6 @@ export interface AppContext {
     intro: { header: string, tagline: string, description: string }
     data: unknown
     companies: any[]
-    controller: unknown
 }
 
 export const AppContext = React.createContext<AppContext>( null )

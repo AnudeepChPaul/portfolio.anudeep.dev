@@ -197,10 +197,6 @@ const IndexPage = ({ data }: { data: { site: { siteMetadata: { title: string } }
     window.scrollTo( { top: 0, left: 0, behavior: 'smooth' } )
   }, [] )
 
-  if ( typeof window !== 'undefined' ) {
-    controller = controller || new window.ScrollMagic.Controller()
-  }
-
 
   return (
     <AppContext.Provider value={{ links, top10Skills, theme, skillSet, toggleTheme, intro, data, companies }}>
