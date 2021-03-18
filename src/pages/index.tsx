@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import DefaultLayout from '../layouts/DefaultLayout'
 import { AppContext } from '../Context'
 import ResumeView from '../components/ResumeView'
@@ -184,6 +184,8 @@ const companies = [
   }
 ]
 
+let controller = null
+
 const IndexPage = ({ data }: { data: { site: { siteMetadata: { title: string } } } }) => {
   const [ theme, setTheme ] = useState( 'light' )
 
@@ -191,9 +193,14 @@ const IndexPage = ({ data }: { data: { site: { siteMetadata: { title: string } }
     setTheme( theme === 'dark' ? 'light' : 'dark' )
   }
 
-  // useEffect( () => {
-  //   window.scrollTo( { top: 0, left: 0, behavior: 'smooth' } )
-  // }, [] )
+  useEffect( () => {
+    window.scrollTo( { top: 0, left: 0, behavior: 'smooth' } )
+  }, [] )
+
+  if ( typeof window !== 'undefined' ) {
+    controller = controller || new window.ScrollMagic.Controller()
+  }
+
 
   return (
     <AppContext.Provider value={{ links, top10Skills, theme, skillSet, toggleTheme, intro, data, companies }}>

@@ -12,8 +12,4 @@ export interface AppContext {
     controller: unknown
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-export const controller = new window.ScrollMagic.Controller()
-
 export const AppContext = React.createContext<AppContext>( null )

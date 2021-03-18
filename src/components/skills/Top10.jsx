@@ -5,7 +5,7 @@ import { PercentageRing } from '../../shared/PercentageRing'
 import * as PropTypes from 'prop-types'
 
 const Top10 = forwardRef((props, ref) => {
-  const fontSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('font-size'))
+  const fontSize = 20//parseInt(getComputedStyle(document.documentElement).getPropertyValue('font-size'))
 
   return (
     <article className='topSkills'>
