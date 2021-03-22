@@ -1,10 +1,15 @@
+
 .introSection {
   opacity: 1;
+  width: var(--readable-content-width);
+  margin: 7vh auto 0;
+  height: 93vh;
+  display: flex;
+  align-items: center;
 
   .introSectionInner {
     display: flex;
     width: 100%;
-    opacity: 0;
 
     &.hidden {
       display: none;
@@ -14,7 +19,7 @@
   .picArticle {
     width: 20rem;
     height: 20rem;
-    background-color: var(--textColor);
+    background: var(--textColor);
     border-radius: 0.1rem;
   }
 
@@ -28,68 +33,149 @@
   }
 
   .introCinematic {
-    //display: flex;
-    //justify-content: center;
-    padding-left: 4rem;
+    z-index: 7;
 
-    .name, .myself, .designation {
-      position: absolute;
-      opacity: 0;
-      margin: 0 0 0 16rem;
-      font-size: 5.5rem;
-      width: calc(var(--readable-content-width) - 16rem);
-      font-weight: lighter;
-    }
-
-    .myself {
-      font-size: 7rem;
-      width: 16rem;
+    h1, h6 {
       margin: 0;
-      opacity: 1;
     }
 
     .name {
-      position: absolute;
       opacity: 1;
-      //padding: 0 0 0 2.4rem;
+      font-weight: 100;
+      font-size: 5.5rem;
       word-break: break-word;
+      height: 18.5rem;
+      line-height: 6rem;
+      letter-spacing: 0.8rem;
+      user-select: none;
 
-      span {
-        opacity: 0;
+      :nth-child(1) {
+        margin-left: 0.3rem;
+      }
 
-        &:nth-child(1), &:nth-child(8), &:nth-child(15) {
-          color: lightpink;
+      div {
+        &:first-letter {
+          color: lightcoral;
         }
       }
     }
 
     .designation {
-      position: absolute;
-      opacity: 1;
-      //padding: 0 0 0 2.5rem;
-      font-size: 5.5rem;
-
-      ul {
-        list-style: none;
-        margin: 0;
-
-        li {
-          position: absolute;
-          opacity: 0;
-        }
-
-        .second {
-          top: 7rem;
-        }
-      }
-
-      div {
-        line-height: 20rem;
-      }
-
-      .finalDesignation {
-        opacity: 0;
-      }
+      font-size: 1.2rem;
+      letter-spacing: 0.1rem;
     }
+
+    hr {
+      margin: 2rem 0;
+      border-color: var(--accent);
+      background-color: var(--accent);
+      border-top-width: 0px;
+      border-left-width: 0px;
+    }
+  }
+
+}
+
+
+.introPoster {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+}
+
+.introPosterBackground {
+  position: absolute;
+  right: 30rem;
+  top: calc(50% - 34rem);
+  width: 64rem;
+  height: 64rem;
+}
+
+.lightSource, .lightSourceEffect1, .lightSourceEffect2, .lightSourceEffect3, .lightSourceEffect4, .lightSourceEffect5 {
+  position: absolute;
+  border-radius: 50%;
+  //box-shadow: 0 0 0.5rem 0.25rem var(--lightSourceColorLighter5);
+  transition: all 0.1s linear;
+  transform-style: preserve-3d;
+}
+
+.lightSource {
+  width: 24rem;
+  height: 24rem;
+  left: 20rem;
+  top: 20rem;
+  //z-index: 5;
+  z-index: 2;
+  background-color: var(--lightSourceColor);
+}
+
+.lightSourceEffect1 {
+  width: 32rem;
+  height: 32rem;
+  left: 16rem;
+  top: 16rem;
+  z-index: 3;
+  background-color: transparent;
+  border: 4rem solid var(--lightSourceColorLighter1);
+  opacity: 0.91;
+}
+
+.lightSourceEffect2 {
+  width: 40rem;
+  height: 40rem;
+  left: 12rem;
+  top: 12rem;
+  z-index: 3;
+  background-color: transparent;
+  border: 4rem solid var(--lightSourceColorLighter2);
+  opacity: 0.81;
+}
+
+.lightSourceEffect3 {
+  width: 48rem;
+  height: 48rem;
+  left: 8rem;
+  top: 8rem;
+  z-index: 4;
+  background-color: transparent;
+  border: 4rem solid var(--lightSourceColorLighter3);
+  opacity: 0.71;
+}
+
+.lightSourceEffect4 {
+  width: 56rem;
+  height: 56rem;
+  left: 4rem;
+  top: 4rem;
+  z-index: 4;
+  background-color: transparent;
+  border: 4rem solid var(--lightSourceColorLighter4);
+  opacity: 0.61;
+}
+
+.lightSourceEffect5 {
+  width: 64rem;
+  height: 64rem;
+  left: 0rem;
+  top: 0rem;
+  z-index: 4;
+  background-color: transparent;
+  border: 4rem solid var(--lightSourceColorLighter5);
+  opacity: 0.51;
+}
+
+@media only screen and (max-width: 1370px) {
+  .introPosterBackground {
+    right: -16rem;
+  }
+}
+
+
+@media only screen and (min-width: 1371px) and (max-width: 1970px) {
+  .introPosterBackground {
+    right: 4rem;
   }
 }

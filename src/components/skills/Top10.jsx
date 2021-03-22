@@ -5,12 +5,12 @@ import { PercentageRing } from '../../shared/PercentageRing'
 import * as PropTypes from 'prop-types'
 
 const Top10 = forwardRef((props, ref) => {
-  const fontSize = 20//parseInt(getComputedStyle(document.documentElement).getPropertyValue('font-size'))
+	const fontSize = 16//parseInt(getComputedStyle(document.documentElement).getPropertyValue('font-size'))
+	const progress = (Math.floor(Math.random() * 30) + 60)
 
   return (
     <article className='topSkills'>
       {props.skills.map((skill, index) => {
-        const progress = (Math.floor(Math.random() * 30) + 60)
         return (
           <div key={index} className='skillQuickDisplay'>
             <PercentageRing progress={progress} radius={fontSize * 5} stroke={5}/>

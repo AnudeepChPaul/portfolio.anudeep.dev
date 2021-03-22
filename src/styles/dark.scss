@@ -1,8 +1,9 @@
 .dark-theme {
   --backgroundColor: transparent;
-  --backgroundColor: #011021;
+  --backgroundColor: linear-gradient(45deg, #222222, #043d52);
   --backgroundColorLighter: #363d47;
-  --textColor: #faebd7;
+  --textColor: #f5f5f5;
+  --accent: lightcoral;
   --buttonTextColor: antiquewhite;
   --successColor: mediumspringgreen;
 }

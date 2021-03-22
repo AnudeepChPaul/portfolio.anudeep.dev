@@ -3,13 +3,11 @@
   width: 100vw;
   overflow: auto;
   color: var(--textColor);
-  background-color: var(--backgroundColor);
+  background: var(--backgroundColor);
 
   hr {
     border-color: var(--textColor);
   }
-
-  font-family: 'Montserrat', 'Open Sans', 'Noto Sans', system-ui;
 
 
   footer {
@@ -20,10 +18,37 @@
     position: fixed;
     bottom: 0;
     z-index: 1;
-    background-color: var(--backgroundColor);
+    background: transparent;
 
     .fab {
       margin-left: 0.25rem;
     }
+  }
+}
+
+.styler {
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(3px);
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.mainView {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: scroll;
+
+  .introSection, .skillSection, .projects {
+    width: var(--readable-content-width);
+    padding: 0 1rem;
+  }
+
+  .projects {
+    margin-bottom: 7vh;
   }
 }

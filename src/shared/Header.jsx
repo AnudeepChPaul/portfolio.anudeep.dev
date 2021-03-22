@@ -1,30 +1,58 @@
 import * as React from 'react'
-import { AppContext } from '../Context'
 import './Header.scss'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import * as PropTypes from 'prop-types'
+
 
 const downloadPDF = async () => {
-	// TODO: Implementation
+  // TODO: Implementation
 }
 
-const HeaderComp = () => {
+const HeaderComp = (props) => {
+//   window.anime = anime
+//   window.useTriggerTransition = useTriggerTransition({
+//     exit: {
+//       length: 1
+//       , trigger: ({ exit, node }) => {
+//         debugger
+//       }
+//     }
+//     , entry: {
+//       length: 0.5
+//       , delay: 0.5
+//       , trigger: ({ exit, node }) => {
+// debugger
+//         anime({
+//           triggers: node
+//           , translateX: [ 0, -1000 ]
+//           , opacity: [ 1, 0 ]
+//         })
+//       }
+//     }
+//   })
   return (
-    <AppContext.Consumer>
-			{({ links, toggleTheme }) => (
-        <header className='headerWrapper'>
-          <div className="headerInner">
-            <h1> Anudeep </h1>
-            <div className="headerBtnWrapper">
-							<button className="headerBtn fas fa-file-download" onClick={() => downloadPDF()}
-											aria-labelledby="download-resume"/>
-							<button className="headerBtn themeToggle fas fa-adjust" onClick={() => toggleTheme()}
-											aria-labelledby="theme-toggler"/>
-            </div>
-          </div>
-        </header>
-      )}
-    </AppContext.Consumer>
+    <header className='headerWrapper'>
+      <div className="headerInner">
+        <h1> Anudeep </h1>
+        <div className="headerBtnWrapper">
+          <AniLink cover direction="right" to="/" className="headerBtn" duration={1} bg="#fff5ea">Home</AniLink>
+          <AniLink paintDrip to="skills" className="headerBtn" color="lightcoral">Skills</AniLink>
+          <button className="headerBtn" onClick={() => downloadPDF()}
+                  aria-labelledby="download-resume">Download Resume
+          </button>
+          <button className="headerBtn themeToggle fas fa-adjust" onClick={() => props.toggleTheme()}
+                  aria-labelledby="theme-toggler"/>
+        </div>
+
+        {/*Best viewed in <i className="fab fa-chrome"></i> <i className="fab fa-firefox"></i>*/}
+      </div>
+      {/*<div className="styler"></div>*/}
+    </header>
   )
 }
 
+HeaderComp.propTypes = {
+  toggleTheme: PropTypes.func
+}
 
 export default HeaderComp

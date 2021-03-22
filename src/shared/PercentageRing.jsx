@@ -17,12 +17,17 @@ export const PercentageRing = (props) => {
 			width={radius * 2}
 			style={{ position: 'absolute' }}
     >
+			<defs>
+				<filter id="gaussianBlur">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+				</filter>
+			</defs>
       <circle
 				stroke="inherit"
 				fill="transparent"
 				strokeWidth={stroke}
 				strokeDasharray={circumference + ' ' + circumference}
-				style={{ strokeDashoffset }}
+				style={{ strokeDashoffset, filter: 'url(#gaussianBlur)' }}
 				strokeLinecap="round"
 				r={normalizedRadius}
 				cx={radius}

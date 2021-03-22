@@ -1,20 +1,16 @@
 // import anime from 'animejs/lib/anime.es.js'
 import * as React from 'react'
-import { useEffect } from 'react'
 import './Intro.scss'
 import PropTypes from 'prop-types'
-import anime from 'animejs'
 
 
 const Intro = React.forwardRef((props, ref) => {
-  useEffect(() => {
-    console.log('useEffect Intro.jsx')
-
+  /** useEffect(() => {
     if ( typeof window === 'undefined' ) {
       return
     }
 
-		const controller = new window.ScrollMagic.Controller()
+    const controller = new window.ScrollMagic.Controller()
 
     window.scrollTo({ top: 0, left: 0 })
 
@@ -45,34 +41,34 @@ const Intro = React.forwardRef((props, ref) => {
         , rotateX: [ '180deg', 0 ]
         , delay  : anime.stagger(100)
       }).add({
-			targets     : '.designation .second'
-			, opacity   : [ 0, 1 ]
-			, translateX: [ -250, 0 ]
-			, delay     : anime.stagger(100)
-			, easing    : 'easeOutElastic(1, .6)'
-		}).add({
-			targets     : '.designation .second, .designation .first'
-			, opacity   : [ 1, 0 ]
-			, translateX: [ 0, 250 ]
-			, easing    : 'easeOutElastic(1, .6)'
-		}).add({
-			targets  : '.designation .finalDesignation'
-			, opacity: [ 0, 1 ]
-			, rotateX: [ '45deg', 0 ]
-		}).add({
-			targets  : '.designation .finalDesignation, .myself'
-			, opacity: [ 1, 0 ]
-		}).add({
-			targets  : '.introSectionInner'
-			, opacity: [ 0, 1 ]
-			, scale  : [ 0, 1 ]
-		}).add({
-			targets   : '.introSectionInner'
-			, scale   : [ 1, 9 ]
-			, opacity : [ 1, 0 ]
-			, duration: 1200
-			, easing  : 'linear'
-		})
+        targets     : '.designation .second'
+        , opacity   : [ 0, 1 ]
+        , translateX: [ -250, 0 ]
+        , delay     : anime.stagger(100)
+        , easing    : 'easeOutElastic(1, .6)'
+      }).add({
+        targets     : '.designation .second, .designation .first'
+        , opacity   : [ 1, 0 ]
+        , translateX: [ 0, 250 ]
+        , easing    : 'easeOutElastic(1, .6)'
+      }).add({
+        targets  : '.designation .finalDesignation'
+        , opacity: [ 0, 1 ]
+        , rotateX: [ '45deg', 0 ]
+      }).add({
+        targets  : '.designation .finalDesignation, .myself'
+        , opacity: [ 1, 0 ]
+      }).add({
+        targets  : '.introSectionInner'
+        , opacity: [ 0, 1 ]
+        , scale  : [ 0, 1 ]
+      }).add({
+        targets   : '.introSectionInner'
+        , scale   : [ 1, 9 ]
+        , opacity : [ 1, 0 ]
+        , duration: 1200
+        , easing  : 'linear'
+      })
 
     const trigger = '.wrapper'
       , pin = document.querySelector('.introSection')
@@ -133,60 +129,54 @@ const Intro = React.forwardRef((props, ref) => {
     }
 
     window.anime = anime
+  }, []) **/
+
+  React.useEffect(() => {
+    if ( typeof window === 'undefined' ) {
+      return
+    }
+
+    const query = document.querySelector('.introPosterBackground').children
+    const name = document.querySelector('.name')
+
+    window.onmousemove = e => {
+      const x = (window.innerWidth / 2 - e.pageX) / 25
+      const y = (window.innerHeight / 2 - e.pageY) / 25
+
+      let index = 1
+      for (let child of query) {
+        child.style.transform = `translate3d(${x}px, ${y}px, 0)`
+        ++index
+      }
+      index = 1
+
+      // name.style.transform = `translate3d(${x}px, ${y}px, 0)`
+    }
   }, [])
 
   return (
     <section className='introSection' ref={ref}>
       <div className="introCinematic">
-        <h1 className="myself">I'm</h1>
         <h1 className="name">
-          <div><span>A</span>
-            <span>n</span>
-            <span>u</span>
-            <span>d</span>
-            <span>e</span>
-            <span>e</span>
-            <span>p</span></div>
-          <div><span>C</span>
-            <span>h</span>
-            <span>a</span>
-            <span>n</span>
-            <span>d</span>
-            <span>r</span>
-            <span>a</span></div>
-          <div>
-            <span>P</span>
-            <span>a</span>
-            <span>u</span>
-            <span>l</span></div>
+          <div>ANUDEEP</div>
+          <div>CHANDRA</div>
+          <div>PAUL</div>
         </h1>
-        <h1 className="designation">
-          <ul>
-            <li className="listAnimated first">
-              <span>F</span>
-              <span>r</span>
-              <span>o</span>
-              <span>n</span>
-              <span>t</span>
-              <span> </span>
-              <span>E</span>
-              <span>n</span>
-              <span>d</span>
-            </li>
-            <li className="listAnimated second">Back End</li>
-            <li className="finalDesignation">Full Stack</li>
-          </ul>
-          <div className="finalDesignation">Web Dev</div>
-        </h1>
+        <hr/>
+        <h6 className="designation">{props.tagline.split('|').map(line => (
+          <div key={line}>{line}</div>
+        ))}</h6>
       </div>
-      <div className='introSectionInner'>
-        <article className='picArticle'/>
-        <article className='bioArticle'>
-          <hr style={{ width: ' 25rem', margin: 0 }}/>
-          <h2 style={{ fontSize: '1.6rem' }}>{props.header}</h2>
-          <h3>{props.tagline}</h3>
-          <p dangerouslySetInnerHTML={{ __html: props.description }}></p>
-        </article>
+      <div className="introPoster">
+        <div className="introPosterBackground">
+          <div className="lightSource"></div>
+          <div className="lightSourceEffect1"></div>
+          <div className="lightSourceEffect2"></div>
+          <div className="lightSourceEffect3"></div>
+          <div className="lightSourceEffect4"></div>
+          <div className="lightSourceEffect5"></div>
+        </div>
+        <div className="introPosterDrawings"></div>
       </div>
     </section>
   )

@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Noto+Sans:wght@400;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,300&display=swap");
+//@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Noto+Sans:wght@400;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,300&display=swap");
+//@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&family=Major+Mono+Display&family=Megrim&family=Monoton&family=Quicksand:wght@300;400&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans:wght@300;400&family=Roboto:ital,wght@0,100;0,700;1,300&display=swap');
 
 $legacy-support-for-mozilla: true;
 $fa-font-path: "../../src/styles/fontawesome/webfonts";
@@ -13,8 +16,8 @@ $fa-font-path: "../../src/styles/fontawesome/webfonts";
 :root {
   font-size: 16px;
   scrollbar-width: none;
-  --readable-content-width: 52rem;
-  --readable-content-height: 25rem;
+  --readable-content-width: 64rem;
+  --readable-content-height: 90vw;
 
   &::-webkit-scrollbar {
     display: none;
@@ -24,16 +27,15 @@ $fa-font-path: "../../src/styles/fontawesome/webfonts";
 @media only screen and (min-width: 1400px) {
   :root {
     //--readable-content-width: 60rem;
-    font-size: 20px;
+    font-size: 16px;
+    --readable-content-width: 81rem;
   }
 }
 
 * {
   box-sizing: border-box;
-  //margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
-
 
   &::-webkit-scrollbar {
     display: none;
@@ -48,12 +50,23 @@ body {
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  //font-family: 'Libre Barcode 128 Text', cursive;
+  //font-family: 'Major Mono Display', 'Megrim', 'Monoton', monospace, cursive;
+  //font-family: Quicksand, -apple-system, system-ui;
+  font-family: 'Open Sans', 'Noto Sans', system-ui;
 
-  .backgroundMotion {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
+  .monoton {
+    font-family: 'Monoton', monospace, cursive;
+    font-weight: 500;
+  }
+
+  .megrim {
+    font-family: 'Megrim', cursive;
+  }
+
+  .major {
+    font-family: 'Major Mono Display', monospace, cursive;
   }
 }
+
+

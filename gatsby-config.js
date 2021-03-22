@@ -7,8 +7,18 @@ module.exports = {
     , siteUrl: 'https://portfolio.anudeep.dev'
   }
   , plugins: [
-    'gatsby-plugin-react-helmet'
+		'gatsby-plugin-react-helmet'
+		, 'gatsby-plugin-sitemap'
     , 'gatsby-plugin-gatsby-cloud'
+		, {
+			resolve: 'gatsby-plugin-transition-link'
+		}
+		, {
+			resolve  : 'gatsby-plugin-layout'
+			, options: {
+				component: require.resolve('./src/layouts/DefaultLayout.tsx')
+			}
+		}
     , 'gatsby-plugin-offline'
     , {
       resolve: 'gatsby-plugin-sass'
@@ -26,7 +36,7 @@ module.exports = {
     , {
       resolve: 'gatsby-plugin-mdx'
       , options: {
-        extensions: ['.md', '.mdx']
+				extensions: [ '.md', '.mdx' ]
       }
     }
     , {
@@ -53,4 +63,4 @@ module.exports = {
       }
     }
   ]
-};
+}

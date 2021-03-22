@@ -1,13 +1,8 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
-import './index.scss'
 import { AppContext } from '../Context'
-import Intro from '../components/intro/Intro'
+import Skills from '../components/skills/Skills'
 
 const IndexPage = ({ data }: { data: { site: { siteMetadata: { title: string } } } }) => {
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
   return (
     <React.StrictMode>
       {/*<Helmet title={data.site.siteMetadata.title}>*/}
@@ -26,22 +21,12 @@ const IndexPage = ({ data }: { data: { site: { siteMetadata: { title: string } }
       {/*  </script>*/}
       {/*</Helmet>*/}
       <AppContext.Consumer>
-        {({ intro }: { intro: { header: string, description: string, tagline: string } }) => (
-          <Intro {...intro}/>
+        {({ intro, companies }) => (
+          <Skills/>
         )}
       </AppContext.Consumer>
     </React.StrictMode>
   )
 }
-
-export const query = graphql`
-    query {
-        site {
-            siteMetadata {
-                title
-            }
-        }
-    }
-`
 
 export default IndexPage

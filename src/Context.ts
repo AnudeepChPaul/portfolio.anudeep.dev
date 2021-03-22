@@ -5,9 +5,7 @@ export interface AppContext {
     top10Skills: string[]
     theme: string
     skillSet: any[]
-    toggleTheme: () => void
     intro: { header: string, tagline: string, description: string }
-    data: unknown
     companies: any[]
 }
 
