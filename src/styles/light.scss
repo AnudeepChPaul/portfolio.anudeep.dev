@@ -4,6 +4,7 @@ $lightSourceColor: #ffcf51;
   --backgroundColor: #fafffa;
   --backgroundColor: linear-gradient(225deg, #ffffff 64%, #fff5ea, #ffc887);
   --backgroundColor: radial-gradient(81rem at right, #ffffff 71%, #ffc887);
+  --backgroundColor: #fffefb;
   --backgroundColorLighter: #dbdfdb;
   --textColor: #011131;
   --buttonTextColor: #011131;
@@ -17,28 +18,27 @@ $lightSourceColor: #ffcf51;
   --lightSourceColorLighter5: #{lighten($lightSourceColor, 30%)};
 }
 
-
 @media only screen and (max-width: 1370px) {
   .light-theme {
     --backgroundColor: radial-gradient(81rem at right, #ffffff 71%, #ffc887);
   }
 }
 
-
-@media only screen and (min-width: 1371px) and (max-width: 1570px) {
-  .light-theme {
-    --backgroundColor: radial-gradient(105rem at right, #ffffff 71%, #ffc887);
-  }
-}
-
-@media only screen and (min-width: 1571px) and (max-width: 1770px) {
-  .light-theme {
-    --backgroundColor: radial-gradient(105rem at right, #ffffff 71%, #ffc887);
-  }
-}
-
-@media only screen and (min-width: 1771px) and (max-width: 1990px) {
-  .light-theme {
-    --backgroundColor: radial-gradient(125rem at right, #ffffff 71%, #ffc887);
-  }
-}
+//
+//@media only screen and (min-width: 1371px) and (max-width: 1570px) {
+//  .light-theme {
+//    --backgroundColor: radial-gradient(105rem at right, #ffffff 71%, #ffc887);
+//  }
+//}
+//
+//@media only screen and (min-width: 1571px) and (max-width: 1770px) {
+//  .light-theme {
+//    --backgroundColor: radial-gradient(105rem at right, #ffffff 71%, #ffc887);
+//  }
+//}
+//
+//@media only screen and (min-width: 1771px) and (max-width: 1990px) {
+//  .light-theme {
+//    --backgroundColor: radial-gradient(125rem at right, #ffffff 71%, #ffc887);
+//  }
+//}

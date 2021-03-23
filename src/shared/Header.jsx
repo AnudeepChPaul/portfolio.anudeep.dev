@@ -35,13 +35,14 @@ const HeaderComp = (props) => {
       <div className="headerInner">
         <h1> Anudeep </h1>
         <div className="headerBtnWrapper">
-          <AniLink cover direction="right" to="/" className="headerBtn" duration={1} bg="#fff5ea">Home</AniLink>
-          <AniLink paintDrip to="skills" className="headerBtn" color="lightcoral">Skills</AniLink>
+          <AniLink paintDrip to="/" className="headerBtn" duration={1} color="lightyellow">Home</AniLink>
+          <AniLink paintDrip to="skills" className="headerBtn" color="lightyellow" duration={1}>Skills</AniLink>
+          {/*<AniLink cover direction="left" to="skills" className="headerBtn" bg="#fff5ea">Skills</AniLink>*/}
           <button className="headerBtn" onClick={() => downloadPDF()}
-                  aria-labelledby="download-resume">Download Resume
+            aria-labelledby="download-resume">Download Resume
           </button>
           <button className="headerBtn themeToggle fas fa-adjust" onClick={() => props.toggleTheme()}
-                  aria-labelledby="theme-toggler"/>
+            aria-labelledby="theme-toggler"/>
         </div>
 
         {/*Best viewed in <i className="fab fa-chrome"></i> <i className="fab fa-firefox"></i>*/}
