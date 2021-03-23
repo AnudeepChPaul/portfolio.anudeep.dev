@@ -1,0 +1,59 @@
+.projects {
+  user-select: none;
+  text-align: center;
+  width: var(--readable-content-width);
+  padding: 0 1rem;
+
+  ul {
+    padding-inline-start: 0;
+  }
+
+  .journeyConnector {
+    transform: rotate(90deg);
+    position: relative;
+    top: 24rem;
+    z-index: 0;
+    width: 24rem;
+    margin: 0 auto;
+  }
+
+  .companyInfoWrapper {
+    display: flex;
+    list-style: none;
+    border-radius: 0.25rem;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 2rem;
+    position: relative;
+
+    &.right {
+      justify-content: flex-end;
+    }
+
+    li {
+      list-style: none;
+    }
+  }
+
+  .companyInfo {
+    width: 64%;
+    position: relative;
+    background: var(--backgroundColorLighter);
+    color: var(--textColor);
+    padding: 2rem;
+    border-radius: 0.25rem;
+
+    h3, p {
+      padding: 0;
+      margin-top: 0;
+    }
+
+    .projectInfo {
+      padding: 0 3rem;
+
+      p {
+        font-weight: bold;
+      }
+    }
+  }
+}
